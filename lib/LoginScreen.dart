@@ -26,6 +26,7 @@ class _LoginScreenState extends State<LoginScreen> {
   };
 
   final _auth = FirebaseAuth.instance;
+  bool reSend = false;
 
   var _isLoading = false;
   final _passwordController = TextEditingController();
@@ -60,8 +61,10 @@ class _LoginScreenState extends State<LoginScreen> {
 
         if (newUser != null) {
           SignUp().verifyEmail();
+          setState(() {
+            reSend = true;
+          });
         }
-
       } catch (err) {
         throw err;
       }
@@ -80,6 +83,7 @@ class _LoginScreenState extends State<LoginScreen> {
       });
     } else {
       setState(() {
+        reSend=false;
         _authMode = AuthMode.Login;
       });
     }
@@ -250,6 +254,36 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
                     ),
+                    if (reSend)
+                      Column(
+                        children: <Widget>[
+                          Container(
+                            padding: EdgeInsets.all(10),
+                            child: Text(
+                              'A verification link has sent to your email.\nPlease verify your email.' +
+                                  '\n\nIf not received please click RESEND',
+                              style: TextStyle(color: Colors.black38),
+                            ),
+                          ),
+                          FlatButton(
+                            child: Text(
+                              "RESEND",
+                              style: TextStyle(color: Colors.blue),
+                            ),
+                            onPressed: () async {
+                              try {
+                                // print('In resend');
+                                await _auth.currentUser.sendEmailVerification();//TODO
+                              } catch (err) {
+                                throw err;
+                              }
+                              setState(() {
+                                reSend = true;
+                              });
+                            },
+                          )
+                        ],
+                      ),
                   ],
                 ),
               ],
