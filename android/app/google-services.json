@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "261904827949",
+    "firebase_url": "https://auth-testing-f289b.firebaseio.com",
+    "project_id": "auth-testing-f289b",
+    "storage_bucket": "auth-testing-f289b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:261904827949:android:8e3db1ba3093606ceedaa4",
+        "android_client_info": {
+          "package_name": "com.ultimateDip.auth_testing"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "261904827949-ole81apdi3d0l73mf5p8m3us36ic2kvo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOtef_TMXrZZQb1Xw-L-epnkKtDI8pZy8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "261904827949-ole81apdi3d0l73mf5p8m3us36ic2kvo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
