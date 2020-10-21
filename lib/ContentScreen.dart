@@ -50,8 +50,7 @@ class _ContentScreenState extends State<ContentScreen> {
                     (newUser!=null && newUser.emailVerified)
                         ? 'Email : ' +
                         newUser.email +
-                        '\nUser Id : ' +
-                        newUser.uid + '\nStatus : $status'
+                        '\nStatus : $status'
                         : 'data not available',
                     style: TextStyle(
                         color: Colors.black87, fontStyle: FontStyle.italic),
